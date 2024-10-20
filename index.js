@@ -98,7 +98,9 @@ const getCodecParams = (codec, metadata, ipod) => {
 
   const codecParams = {
     alac: ['-c:a', 'alac', ...videoParams, ...ipod_alacParams],
-    aac: ['-c:a', aacCodec, '-b:a', '256k', ...videoParams, ...ipod_aacParams],
+    //aac: ['-c:a', aacCodec, '-b:a', '128k', ...videoParams, ...ipod_aacParams],
+    aac: ['-c:a', aacCodec, '-b:a', 'vbr', '2', ...videoParams, ...ipod_aacParams],
+
     flac: ['-c:a', 'flac', ...videoParams],
     wav: ['-c:a', 'pcm_s16le', '-vn'],
     opus: ['-c:a', 'libopus', '-b:a', '128k', '-vn'],
